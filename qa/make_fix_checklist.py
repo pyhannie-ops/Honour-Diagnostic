@@ -83,8 +83,7 @@ item("Check every page on your phone: no sideways scrolling, no overlaps, no cut
 item("Open the browser console (F12) on each page and note any red errors", "T")
 item("Fix the About Us credential links. Several point to LinkedIn edit pages (\"add-edit/EDUCATION\") that only you can open", "V",
      "Visitors will hit a login wall. Use your public profile or a credential-verification link, or remove the links.")
-item("Show the Honour™ fee, a range, or your founding-cohort price on the page, not only inside a PDF", "V",
-     "Homepage, Honour and Book Online all say only \"Fee per participant\".")
+item('Put the founding-cohort pricing from your Brief on the Honour\u2122 page: from $441 per participant, $3,525 to $3,969 in total for 5 to 9 participants, 50% deposit and 50% on report delivery', "R", "The Brief already has strong pricing. The website only says \"Fee per participant\", so the buyer never sees a number without downloading a PDF.")
 item("Add one plain-language sentence near the top of the homepage saying what Honour™ is and that it launches in October", "R",
      "Example: \"A three-session, two-week diagnostic that shows where your team is misaligned, before you spend on training or change.\"")
 item("Give the Facilitator Package card a duration, a one-line description and either a price or \"price on the call\"", "V",
@@ -99,7 +98,7 @@ item("Pick one voice: \"we\" on Home, Philosophy and About, but \"I\" on Honour 
      "As a solo founder, \"I\" is honest. If you prefer \"we\", use it everywhere.")
 item("Add alt text to the Our Philosophy compass image and any other pictures without it", "V",
      "Matters for your accessibility statement.")
-item("Check the currency: the homepage shows \"USD ($)\" but the business is in South Africa. State which currency the fees are in", "V")
+item('Say next to the fee that the base currency is USD, with GBP, EUR and ZAR available, so the \\"USD ($)\\" selector makes sense', "R", "This is stated in the Brief but not on the site.")
 item("Click the three Connections \"Say Hello\" buttons. Two partner sites blocked my automated check and one did not respond", "T")
 item("Give each Connections partner button a clearer label (for example \"Contact the editor\") instead of three identical \"Say Hello\"", "R")
 item("Check the About Us \"2026\" pivot-year reference reads as intended", "T")
@@ -110,8 +109,7 @@ item("Check the page titles and descriptions for every page (they show in Google
 heading("3. Make the offer clearer to a sceptical buyer", "The biggest gap is proof and specifics. You are launching a new method, so be honest about that and replace proof with transparency.")
 item("Say plainly that Honour™ is new and launches in October, and offer founding-cohort places (for example the first three engagements)", "R",
      "Honesty builds more trust than vague confidence. Never imply a track record you do not have.")
-item("Add a sample deliverable to the Honour™ Brief: an \"illustrative\" findings page for a dummy team", "R",
-     "This answers the buyer's main question: what do I get in my hand at the end?")
+item('Add an illustrative sample of the Honour\u2122 Report and the individual participant report (dummy team, labelled \\"illustrative\\"), or at least a one-page outline of each', "R", "The Brief describes both reports but a buyer cannot see what one looks like.")
 item("Describe each of the three sessions in one short paragraph: what happens, who attends, what the sponsor receives afterwards", "R",
      "This replaces most of the R·A·D and 8-step jargon with something concrete.")
 item("Add a \"Is this for you? Is it not?\" block: the type of team, size, situation, and when to wait", "R",
@@ -131,6 +129,15 @@ item("Give Our Philosophy page a clear next step (a button to the Honour™ page
 item("Add one concrete example on the Philosophy page of how a principle shows up in a session", "R",
      "\"We pace by breath, not urgency\" needs a real example to feel credible to a sponsor.")
 
+item("Put the Brief's step-by-step timeline (discovery call, intake, three sessions, report within 3 business days) on the Honour\u2122 page", "R",
+     "It answers \"how much of my time, and when?\" better than anything on the site today.")
+item("Show the minimum of 5 participants on the site (the Brief's pricing table starts at 5, the site only says a maximum of 9)", "V")
+item("Put the Gifts of Clarity (journaling eBooklet and Double Take Cards) on the Honour\u2122 page as a visible benefit for each participant", "R")
+item("Add the POPIA and GDPR data-handling line to the Honour\u2122 page, not just the Brief", "R",
+     "Confidentiality is a sponsor's first worry about a team diagnostic.")
+item("Decide whether Honour\u2122 gives recommendations. The Brief says \"actionable\" and \"before making recommendations\" but also \"does not prescribe\"", "R",
+     "One wording everywhere.")
+item("Say whether the sponsor attends the sessions", "R")
 heading("4. Present the whole HFS Arc as your business model", "The site serves three engagements, but only Honour™ exists at launch. Show the journey without making the site look unfinished.")
 item("Show the three arcs as one journey on the homepage: Honour™ (see clearly), Flow™ (practise), SoftPower™ (lead)", "R",
      "One simple visual with three steps, Honour™ marked \"Open now\".")
@@ -209,7 +216,7 @@ from docx.enum.text import WD_BREAK
 doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 t = doc.add_paragraph()
 run(t, "Draft copy: What you get in each session", bold=True, color=TEAL, size=16)
-para("Draft for your review. Text in [square brackets] is a placeholder. The mapping of the 8 steps to sessions is an assumption to correct.", italic=True, color=GREY, size=9)
+para("Built from your Honour™ Brief. Text in [square brackets] needs your decision. Written to be lifted straight onto the Honour™ page.", italic=True, color=GREY, size=9)
 
 def block(title, body, get=None):
     p = doc.add_paragraph()
@@ -224,29 +231,37 @@ def block(title, body, get=None):
         run(r, get)
 
 block("How the two weeks work",
-      "Honour\u2122 runs over two weeks: three 90-minute online sessions and two short reflections you complete in your own time. Up to nine people take part. It does not fix or prescribe. It shows you what is happening so you can decide what to do next.")
-block("Session 1: Reveal (Enter, Orient, Reveal)",
-      "The team gets into the room and agrees how the work will run. Then each person is asked, in a structured way, what is happening in the team beyond the meeting narratives: how work really gets done, where it stalls and where people see things differently.",
-      "A first honest picture of the team, in its own words, and a shared starting point that nobody has had to argue for. [Add anything handed to the sponsor after this session.]")
-block("Reflection 1: Reflect (between Sessions 1 and 2, in your own time)",
-      "Each participant privately reviews what surfaced, and adds what they did not say out loud.",
-      "The things people held back in the room, so the next session works with the whole picture and not only the loudest voices. [Confirm format and time.]")
-block("Session 2: Align",
-      "The team looks at what came out and finds where they already agree and where they do not. Differences are named instead of smoothed over.",
-      "A clear view of where the team is aligned and where it is misaligned, with the reasons. [Add any artefact produced here.]")
-block("Reflection 2: Integrate (between Sessions 2 and 3, in your own time)",
-      "Each person considers what the alignment picture means for their own role and what they would want to happen next.",
-      "Individual commitments and questions, ready to bring to the final session.")
-block("Session 3: Direct (Direct, Close)",
-      "The team turns what it has seen into direction: what to keep, what to look at, and what could be next. It closes with a clear view of the choices open to you. Honour\u2122 does not prescribe solutions, so the direction belongs to the team.",
-      "A shared set of next steps the team has chosen, and the sponsor's [summary or readout, format to be confirmed]. If further support helps, Flow\u2122 is the natural next step.")
+      "Honour™ runs over two weeks: three 90-minute online sessions and two short private reflections. Between three and nine people take part [the Brief says 5 to 9 in the pricing table, so confirm the minimum]. Honour™ does not fix or prescribe. It shows you what is really happening, so you can decide what to do next.")
+block("Before Session 1: Intake",
+      "You complete a short sponsor intake and consent form, and each participant completes an individual experience form. Data is handled in line with POPIA and equivalent international standards, including GDPR.",
+      "Every session starts with the full picture already in hand, and everyone knows how their information is used.")
+block("Session 1: Reveal (90 minutes, online, live)",
+      "The first structured session surfaces current patterns, sources of friction and the concerns nobody says out loud in meetings.",
+      "A first honest picture of how the team really works, in the team's own words.")
+block("Reflect (a few days after Session 1, private)",
+      "Each participant receives a brief private reflection to record what emerged for them. While they do, the session data is synthesised and anonymised. [Say how long it takes, for example about 20 minutes.]",
+      "A safe place to say what did not come out in the room, so the next session works with the whole picture.")
+block("Session 2: Align (90 minutes, online, live)",
+      "The team reviews the anonymised diagnostic data together and maps where the misalignment sits: in roles, communication, systems, leadership or the work itself.",
+      "A clear map of where the team is aligned and where it is not, with the reasons.")
+block("Integrate (after Session 2, private)",
+      "A second brief reflection invites each participant to bring what was aligned into their own context, while the directional synthesis is prepared for the final session.",
+      "Each person's own view of what the findings mean for their role.")
+block("Session 3: Direct (90 minutes, online, live)",
+      "The final session consolidates the findings, tests assumptions and confirms the overall picture. This is where truth becomes direction. The next steps remain yours to decide.",
+      "A confirmed, shared picture of your team that leadership can act on.")
+block("Within 3 business days: The Honour™ Report",
+      "The sponsor receives the organisational diagnostic report, with all data anonymised. Each participant receives an individual insight report based on their own responses. Every participant also receives the Gifts of Clarity: a journaling prompts eBooklet and the Double Take Cards (I Do Know vs I Don't Know) reflection deck.",
+      "A report for the sponsor, a personal report for each participant, and a lasting reflection tool for each person, all included in one per-participant rate.")
 
-heading("Questions to answer so this can become final copy")
-for q in ["What does the sponsor receive at the end: a written report, a readout meeting, a one-page summary, or nothing beyond the sessions?",
-          "Do the sponsor and participants see the same results, or does the sponsor see a summary only?",
-          "Is the sponsor in the sessions, or do they stay out so people speak openly?",
-          "What do you do between sessions (analysis, preparing the next session)?",
-          "How long does each reflection take?"]:
+heading("What the Brief already answers, and what is still open")
+for q in ["Answered: the sponsor receives the anonymised Honour™ Report within 3 business days, and participants receive their own reports",
+          "Answered: pricing is $441 to $705 per participant (5 to 9 people), 50% deposit and 50% on report delivery, USD base with GBP, EUR and ZAR available",
+          "Still open: does the sponsor attend the sessions, or stay out so people speak freely? Say so in the Brief and on the site",
+          "Still open: how long does each reflection take?",
+          "Still open: the minimum team size. The pricing table starts at 5 participants but the website only states a maximum of 9",
+          "Still open: the Brief says the findings are \"clear and actionable\" and that Align happens \"before making recommendations\", but elsewhere says Honour™ does not prescribe. Decide whether you give recommendations, and use one wording everywhere",
+          "Still open: Session 2 is labelled \"Week 1–2\" in the timeline. Give the exact spacing (for example, Session 1 on day 1, Session 2 on day 6, Session 3 on day 12)"]:
     item(q)
 
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
