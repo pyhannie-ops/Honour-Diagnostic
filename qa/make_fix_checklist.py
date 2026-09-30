@@ -301,5 +301,18 @@ para("Within 5 business days, the sponsor receives the anonymised Honour™ Repo
 para("The sponsor joins the sessions only if the participants agree. Data is handled in line with POPIA and GDPR.")
 para("From $441 per participant (5 to 9 people, USD; GBP, EUR and ZAR available). 50% deposit to confirm, 50% on report delivery.", bold=True)
 
+doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+t = doc.add_paragraph()
+run(t, "Honour\u2122 page: Before you decide (approved FAQ copy)", bold=True, color=TEAL, size=16)
+para("Approved by you. Voice: \"you\" for the reader, \"we\" for Hannie Consultants.", italic=True, color=GREY, size=9)
+para("Straight answers to the questions worth asking before you commit.", bold=True)
+FAQ = [('Will your people be honest, and will it be safe for them to be?', 'Honour™ only works when people feel safe enough to tell the truth, so it is designed for that. Each participant responds privately as well as in the sessions, and what is shared with the group and with you is anonymised. Participants complete a consent form first, and data is handled in line with POPIA and GDPR. If your team is not ready to engage honestly, we will say so on the discovery call.'), ('What will you see, and what will your team see?', 'You receive the anonymised Honour™ Report, with clear findings and recommendations. Each participant receives only their own individual report. Nobody is singled out.'), ('Will you be in the sessions?', 'Only if the participants agree to it. You remain the leader throughout. Honour™ gives you a clearer picture to lead from; it does not replace your judgement.'), ("What does it ask of your team's time?", 'Three 90-minute online sessions over two weeks, plus two private reflections of about 15 minutes each, sent by email link after Sessions 1 and 2. Reports follow within 5 business days.'), ('What does it cost, and what is included?', 'One rate per participant, from $441 (9 people) to $705 (5 people), with no add-ons or hidden tiers. It includes the three sessions, the sponsor report, individual reports and the Gifts of Clarity. A 50% deposit confirms your booking and the balance is due on report delivery. Honour™ is not offered for fewer than 5 participants.'), ('Will it be uncomfortable?', 'It can be, at first. Honour™ reveals what is truly present, and that is not always easy to hear. That is also where its value lies. The sessions are structured and facilitated, not open-ended, and the process is paced so that nothing is forced.'), ('What happens after the diagnostic?', 'You decide. The report gives you a clear picture and recommendations, and you choose which to act on and when. Honour™ does not include training or implementation, but it is the essential first step before any of those can be effective.'), ('What if your team has more than 9 people?', 'Another Honour™ Diagnostic can be commissioned for a second group. This also surfaces cross-team dynamics that one large session would miss.'), ('How do you know it is the right fit before you commit?', 'Book the free 30-minute discovery call. You share your context and we confirm together whether Honour™ is right for your team, its timing and its scope. If it is not, we will tell you honestly.')]
+for q, a in FAQ:
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(8)
+    p.paragraph_format.keep_with_next = True
+    run(p, q, bold=True, color=OCHRE, size=11)
+    para(a)
+
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
 print("saved")
