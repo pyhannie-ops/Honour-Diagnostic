@@ -204,5 +204,50 @@ for _ in lines:
     p = doc.add_paragraph()
     run(p, "_" * 92, color=RGBColor(0xBB, 0xBB, 0xBB))
 
+
+from docx.enum.text import WD_BREAK
+doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+t = doc.add_paragraph()
+run(t, "Draft copy: What you get in each session", bold=True, color=TEAL, size=16)
+para("Draft for your review. Text in [square brackets] is a placeholder. The mapping of the 8 steps to sessions is an assumption to correct.", italic=True, color=GREY, size=9)
+
+def block(title, body, get=None):
+    p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(8)
+    p.paragraph_format.keep_with_next = True
+    run(p, title, bold=True, color=OCHRE, size=11)
+    q = doc.add_paragraph()
+    run(q, body)
+    if get:
+        r = doc.add_paragraph()
+        run(r, "What you get: ", bold=True, color=TEAL)
+        run(r, get)
+
+block("How the two weeks work",
+      "Honour\u2122 runs over two weeks: three 90-minute online sessions and two short reflections you complete in your own time. Up to nine people take part. It does not fix or prescribe. It shows you what is happening so you can decide what to do next.")
+block("Session 1: Reveal (Enter, Orient, Reveal)",
+      "The team gets into the room and agrees how the work will run. Then each person is asked, in a structured way, what is happening in the team beyond the meeting narratives: how work really gets done, where it stalls and where people see things differently.",
+      "A first honest picture of the team, in its own words, and a shared starting point that nobody has had to argue for. [Add anything handed to the sponsor after this session.]")
+block("Reflection 1: Reflect (between Sessions 1 and 2, in your own time)",
+      "Each participant privately reviews what surfaced, and adds what they did not say out loud.",
+      "The things people held back in the room, so the next session works with the whole picture and not only the loudest voices. [Confirm format and time.]")
+block("Session 2: Align",
+      "The team looks at what came out and finds where they already agree and where they do not. Differences are named instead of smoothed over.",
+      "A clear view of where the team is aligned and where it is misaligned, with the reasons. [Add any artefact produced here.]")
+block("Reflection 2: Integrate (between Sessions 2 and 3, in your own time)",
+      "Each person considers what the alignment picture means for their own role and what they would want to happen next.",
+      "Individual commitments and questions, ready to bring to the final session.")
+block("Session 3: Direct (Direct, Close)",
+      "The team turns what it has seen into direction: what to keep, what to look at, and what could be next. It closes with a clear view of the choices open to you. Honour\u2122 does not prescribe solutions, so the direction belongs to the team.",
+      "A shared set of next steps the team has chosen, and the sponsor's [summary or readout, format to be confirmed]. If further support helps, Flow\u2122 is the natural next step.")
+
+heading("Questions to answer so this can become final copy")
+for q in ["What does the sponsor receive at the end: a written report, a readout meeting, a one-page summary, or nothing beyond the sessions?",
+          "Do the sponsor and participants see the same results, or does the sponsor see a summary only?",
+          "Is the sponsor in the sessions, or do they stay out so people speak openly?",
+          "What do you do between sessions (analysis, preparing the next session)?",
+          "How long does each reflection take?"]:
+    item(q)
+
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
 print("saved")
