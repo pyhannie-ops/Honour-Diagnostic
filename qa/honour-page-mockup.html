@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honour Page Mock-up</title>
+<style>
+  :root{--gold:#C4A032;--gold-d:#9a7a17;--teal:#54877f;--teal-d:#095656;--grey:#666;--off:#f3f1ec;--lav:#f0eafe;--ink:#1a1a1a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Poppins,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;font-size:16px}
+  .banner{background:#1a1a1a;color:#fff;text-align:center;font-size:13px;padding:6px 12px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{background:var(--gold);padding:18px 0 22px;text-align:center}
+  .logo{width:84px;height:84px;border-radius:50%;background:#fdf1e0;border:5px solid #e8c56a;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.06em;color:#20304a;line-height:1.2}
+  header p{margin:0 0 14px;font-size:20px;color:#4a3d10}
+  nav{background:var(--teal);border:2px solid #f6e9b8;border-radius:6px;display:flex;flex-wrap:wrap;justify-content:space-around;gap:4px 12px;padding:14px 12px;max-width:1000px;margin:0 auto}
+  nav a{color:#fff;text-decoration:none;font-size:15px}
+  nav a.on{text-decoration:underline}
+  nav a.cta{background:var(--gold);color:#1a1a1a;padding:0 14px;border-radius:4px;font-weight:600;position:relative}
+  .hero{background:var(--grey);color:#fff;text-align:center;padding:64px 0 56px}
+  .eyebrow{font-size:20px;letter-spacing:.04em;margin:0 0 14px;opacity:.9}
+  .hero h1{font-size:clamp(26px,4.4vw,42px);line-height:1.25;margin:0 auto 20px;max-width:800px;font-weight:600}
+  .hero h1 em{font-style:normal;color:#e5c95a}
+  .hero .lede{max-width:760px;margin:0 auto 28px;font-size:17px}
+  .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 24px;border-radius:5px;text-decoration:none;font-weight:600;font-size:15px;box-shadow:2px 3px 0 rgba(0,0,0,.35)}
+  .btn.gold{background:var(--gold);color:#1a1a1a}
+  .btn.line{background:transparent;color:#e5c95a;border:2px solid #e5c95a;box-shadow:none}
+  .btn.dark{background:#3d3d3d;color:#fff}
+  .fine{font-size:13px;margin-top:18px;opacity:.9}
+  .facts{background:var(--off);padding:26px 0}
+  .facts .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;text-align:center}
+  .fact b{display:block;font-size:24px;color:var(--teal-d);line-height:1.2}
+  .fact span{font-size:13px;color:#555}
+  section{padding:56px 0}
+  h2{font-size:28px;color:var(--teal-d);margin:0 0 8px;text-align:center}
+  .sub{text-align:center;color:#555;max-width:680px;margin:0 auto 32px}
+  .steps{list-style:none;margin:0;padding:0;border-left:3px solid var(--gold);margin-left:14px}
+  .steps li{padding:0 0 22px 26px;position:relative}
+  .steps li:before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--gold);border:3px solid #fff}
+  .steps .when{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+  .steps h3{margin:0;font-size:18px;color:var(--teal-d)}
+  .steps p{margin:2px 0 0}
+  .steps .async h3{font-weight:500;font-size:16px}
+  .steps .async:before{background:#fff;border-color:var(--gold)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border-radius:8px;padding:22px;border-top:4px solid var(--gold);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .card h3{margin:0 0 6px;color:var(--teal-d);font-size:17px}
+  .card p{margin:0;font-size:15px}
+  .lav{background:var(--lav)}
+  .off{background:var(--off)}
+  table{width:100%;border-collapse:collapse;max-width:760px;margin:0 auto}
+  td,th{padding:11px 8px;border-bottom:1px solid #c9b04a;text-align:left;vertical-align:top;font-size:15px}
+  th{color:var(--teal-d);font-weight:500;width:34%}
+  .price td,.price th{text-align:center;width:auto;font-weight:600}
+  .price tr:last-child td{background:#fff6d6}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .two h3{color:var(--teal-d);margin:0 0 8px}
+  .two ul{margin:0;padding-left:20px}
+  .two li{margin-bottom:6px;font-size:15px}
+  details{background:#fff;border-radius:6px;padding:14px 18px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);max-width:760px;margin-left:auto;margin-right:auto}
+  summary{cursor:pointer;font-weight:600;color:var(--teal-d)}
+  details p{margin:8px 0 0}
+  .licence{background:linear-gradient(90deg,#6a9aab,#b5b6c4);color:#fff;text-align:center;padding:56px 0}
+  .licence h2{color:#3a3450;text-shadow:1px 1px 0 rgba(255,255,255,.3)}
+  .licence p{max-width:700px;margin:0 auto 16px}
+  .final{background:var(--grey);color:#fff;text-align:center;padding:56px 0}
+  .final h2{color:#fff}
+  footer{background:#fff;padding:22px 0;font-size:13px;text-align:center;color:var(--teal-d)}
+  footer a{color:var(--teal-d);margin:0 8px;text-decoration:none;display:inline-block}
+  .note{font-size:12px;color:#7a6a20;text-align:center;margin-top:10px}
+  @media(max-width:760px){
+    .facts .wrap{grid-template-columns:repeat(2,1fr)}
+    .cards,.two{grid-template-columns:1fr}
+    nav{flex-direction:column;align-items:center}
+    header p{font-size:15px}
+    .btn{width:100%;text-align:center}
+    .price td,.price th{font-size:13px;padding:8px 2px}
+  }
+</style>
+</head>
+<body>
+<div class="banner">MOCK-UP: draft copy and layout for review. Not live. Items in [square brackets] need your confirmation.</div>
+
+<header>
+  <div class="logo">HANNIE<br>CONSULTANTS</div>
+  <p>Proudly part of the HannieVerse Enterprise&trade; Group</p>
+  <nav>
+    <a href="#">Launchpad</a><a href="#">Our Philosophy</a><a class="on" href="#">Honour</a><a href="#">HFS Arc</a><a href="#">About Us</a><a href="#">Technical Writing</a><a href="#">Connections</a><a class="cta" href="#">Book a call</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Honour&trade; &middot; The Diagnostic</p>
+    <h1>See <em>what is really happening</em> in your team, before you decide what to change.</h1>
+    <p class="lede">Honour&trade; is a facilitated organisational diagnostic for teams of 5 to 9 people: three 90-minute online sessions over two weeks, a clear report for the sponsor and for every participant, and recommendations you can act on.</p>
+    <div class="btns">
+      <a class="btn gold" href="#">Book a 30-minute call. No commitment, no pitch.</a>
+      <a class="btn line" href="#how">See how Honour&trade; works</a>
+    </div>
+    <p class="fine">[Founding-cohort places open from 14 October 2026.] From $441 per participant.</p>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>5 to 9</b><span>participants</span></div>
+    <div class="fact"><b>3 &times; 90 min</b><span>live online sessions</span></div>
+    <div class="fact"><b>2 weeks</b><span>from first session to close</span></div>
+    <div class="fact"><b>5 days</b><span>to your report (business days)</span></div>
+    <div class="fact"><b>From $441</b><span>per participant, all included</span></div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How Honour&trade; works</h2>
+    <p class="sub">Three live sessions, two short private reflections, and a report for everyone involved.</p>
+    <ol class="steps">
+      <li><div class="when">Before we begin</div><h3>Free 30-minute discovery call</h3><p>We talk through your context and confirm together that Honour&trade; is the right step. No pitch, no pressure.</p></li>
+      <li><div class="when">Before Session 1</div><h3>Intake and consent</h3><p>The sponsor completes an intake form and each participant completes a short individual form, so every session starts with the full picture.</p></li>
+      <li><div class="when">Session 1 &middot; Tuesday</div><h3>Reveal</h3><p>We surface the patterns, friction and unspoken concerns behind the meeting narratives.</p></li>
+      <li class="async"><div class="when">After Session 1</div><h3>Private reflection (about 15 minutes)</h3><p>An email link to a short questionnaire, due the day before Session 2 at the latest.</p></li>
+      <li><div class="when">Session 2 &middot; Friday</div><h3>Align</h3><p>The team reviews the anonymised findings together and maps where the misalignment sits.</p></li>
+      <li class="async"><div class="when">After Session 2</div><h3>Private integration (about 15 minutes)</h3><p>A second email link, due the day before Session 3 at the latest.</p></li>
+      <li><div class="when">Session 3 &middot; the following Wednesday</div><h3>Direct</h3><p>We confirm the picture and share clear recommendations.</p></li>
+      <li><div class="when">Within 5 business days</div><h3>Your reports</h3><p>The sponsor receives the anonymised Honour&trade; Report. Every participant receives their own report.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <h2>What you receive</h2>
+    <p class="sub">One rate per participant. No add-ons, hidden tiers or surprise charges.</p>
+    <div class="cards">
+      <div class="card"><h3>The Honour&trade; Report</h3><p>An anonymised organisational diagnostic for the sponsor, with clear findings and recommendations. [Add a sample page marked "illustrative".]</p></div>
+      <div class="card"><h3>Individual reports</h3><p>Each participant receives an insight report based on their own responses.</p></div>
+      <div class="card"><h3>Gifts of Clarity</h3><p>A journaling prompts eBooklet and the Double Take Cards (I Do Know vs I Don't Know), for every participant.</p></div>
+    </div>
+    <p class="note">The sponsor joins the sessions only if the participants agree. Data is handled in line with POPIA and GDPR.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Investment</h2>
+    <p class="sub">Founding-cohort pricing. Rates will increase for future cohorts as delivery experience grows. USD base; GBP, EUR and ZAR available.</p>
+    <table class="price">
+      <tr><th>Participants</th><th>Per participant</th><th>Total</th></tr>
+      <tr><td>5</td><td>$705</td><td>$3,525</td></tr>
+      <tr><td>6</td><td>$606</td><td>$3,636</td></tr>
+      <tr><td>7</td><td>$536</td><td>$3,752</td></tr>
+      <tr><td>8</td><td>$483</td><td>$3,864</td></tr>
+      <tr><td>9</td><td>$441</td><td>$3,969</td></tr>
+    </table>
+    <p class="note">50% deposit confirms your booking. 50% is due on report delivery. Teams of more than 9 can commission a second group.</p>
+  </div>
+</section>
+
+<section class="lav">
+  <div class="wrap two">
+    <div>
+      <h3>Honour&trade; may be right for you if</h3>
+      <ul>
+        <li>You sense misalignment but cannot name the specific issue.</li>
+        <li>Strategy sessions, team building or process changes have not solved it.</li>
+        <li>You are preparing for a significant leadership or structural decision.</li>
+        <li>You are ready to hear honest feedback and act on it.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>It may not be right if</h3>
+      <ul>
+        <li>You already know the exact problem and have a plan. You need execution support.</li>
+        <li>You need results in under two weeks.</li>
+        <li>The team is not ready to engage honestly.</li>
+        <li>You want training or skills development. That can follow, but it is not included.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:36px">
+    <h2 style="font-size:22px">What Honour&trade; is not</h2>
+    <p class="sub" style="margin-bottom:0">Not a strategy session, training programme, culture survey, team-building exercise or values workshop. It is a diagnostic: the essential first step before any of those can work. The sponsor continues to lead.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions a sponsor will ask</h2>
+    <p class="sub">[Draft answers from your Brief. Edit freely.]</p>
+    <details><summary>Will people be honest with me in the room?</summary><p>Participants also respond privately, and the data is anonymised before it is shared. The sponsor attends the sessions only if participants agree.</p></details>
+    <details><summary>Who sees the results?</summary><p>The sponsor receives an anonymised organisational report. Each participant receives only their own individual report.</p></details>
+    <details><summary>What happens after the diagnostic?</summary><p>You decide the next steps. The report includes recommendations, and Honour&trade; is Phase 1 of the HFS Arc if you want support to continue.</p></details>
+    <details><summary>How much time does it take?</summary><p>Three 90-minute sessions plus two reflections of about 15 minutes each, over two weeks, with reports within 5 business days.</p></details>
+  </div>
+</section>
+
+<div class="licence">
+  <div class="wrap">
+    <h2>Deliver Honour&trade; Under Licence</h2>
+    <p>Are you an experienced facilitator or an Organisational Development/HR practitioner interested in offering the Honour&trade; Diagnostic to your own clients?</p>
+    <p>Licensing is per engagement and includes full materials and an informative call to discuss what the licence includes and ensure a good fit. [Add price or "discussed on the call".]</p>
+    <a class="btn dark" href="#">Book a licensing call</a>
+  </div>
+</div>
+
+<div class="final">
+  <div class="wrap">
+    <h2>Ready to see your team clearly?</h2>
+    <p>Start with a 30-minute conversation. No commitment, no pitch.</p>
+    <div class="btns"><a class="btn gold" href="#">Book a discovery call</a><a class="btn line" href="#">Download the Honour&trade; Brief</a></div>
+    <p class="fine">Honour&trade; is Phase 1 of the HFS Arc. Flow&trade; and SoftPower&trade; follow. <a href="#" style="color:#e5c95a">Join the waitlist</a></p>
+  </div>
+</div>
+
+<footer>
+  <a href="#">Accessibility Statement</a><a href="#">Booking Policy</a><a href="#">Copyright Policy</a><a href="#">Disclaimer</a><a href="#">Payment Policy</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Terms &amp; Conditions</a>
+</footer>
+</body>
+</html>
