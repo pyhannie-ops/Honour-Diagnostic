@@ -241,13 +241,13 @@ block("Session 1, Tuesday: Reveal (90 minutes, online, live)",
       "The first structured session surfaces current patterns, sources of friction and the concerns nobody says out loud in meetings.",
       "A first honest picture of how the team really works, in the team's own words.")
 block("After Session 1: Reflect (private, by email link)",
-      "Straight after Session 1, each participant receives an email with a link to a short private reflection questionnaire. While they complete it, the session data is synthesised and anonymised. [Say how long it takes, for example about 15 to 20 minutes.]",
+      "Straight after Session 1, each participant receives an email with a link to a short private reflection questionnaire. While they complete it, the session data is synthesised and anonymised. It takes about 15 minutes, though you are welcome to sit with it longer. Please complete it by the day before Session 2 (Thursday) at the latest.",
       "A safe place to say what did not come out in the room, so the next session works with the whole picture.")
 block("Session 2, Friday: Align (90 minutes, online, live)",
       "The team reviews the anonymised diagnostic data together and maps where the misalignment sits: in roles, communication, systems, leadership or the work itself.",
       "A clear map of where the team is aligned and where it is not, with the reasons.")
 block("After Session 2: Integrate (private, by email link)",
-      "Straight after Session 2, each participant receives an email with a link to a second short private questionnaire, to bring what was aligned into their own context. Meanwhile the directional synthesis is prepared for the final session. [Say how long it takes.]",
+      "Straight after Session 2, each participant receives an email with a link to a second short private questionnaire, to bring what was aligned into their own context. Meanwhile the directional synthesis is prepared for the final session. It takes about 15 minutes, though you are welcome to sit with it longer. Please complete it by the day before Session 3 (Tuesday) at the latest.",
       "Each person's own view of what the findings mean for their role.")
 block("Session 3, the following Wednesday: Direct (90 minutes, online, live)",
       "The final session consolidates the findings, tests assumptions and confirms the overall picture. This is where truth becomes direction, and where the recommendations are shared.",
@@ -265,7 +265,7 @@ for q in ["Report delivery is now within 5 business days. The Brief still says 3
           "Minimum team size is 5. Add it to the Honour™ page and the Book Online description (the site only says maximum 9)",
           "Add the sponsor rule to the Brief and the site: the sponsor attends only if participants agree",
           "Replace \"Week 1–2\" in the Brief's timeline with the actual pattern: Tuesday, Friday, then the following Wednesday",
-          "Still to decide: how long each reflection questionnaire takes"]:
+          "Add the reflection details to the Brief and the site: about 15 minutes, take longer if you wish, due the day before the next session at the latest"]:
     item(q)
 
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
