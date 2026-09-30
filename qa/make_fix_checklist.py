@@ -131,13 +131,15 @@ item("Add one concrete example on the Philosophy page of how a principle shows u
 
 item("Put the Brief's step-by-step timeline (discovery call, intake, three sessions, report within 3 business days) on the Honour\u2122 page", "R",
      "It answers \"how much of my time, and when?\" better than anything on the site today.")
-item("Show the minimum of 5 participants on the site (the Brief's pricing table starts at 5, the site only says a maximum of 9)", "V")
+item('Show \\"5 to 9 participants\\" on the Honour\u2122 page and Book Online (the site currently only says a maximum of 9)', "V")
 item("Put the Gifts of Clarity (journaling eBooklet and Double Take Cards) on the Honour\u2122 page as a visible benefit for each participant", "R")
 item("Add the POPIA and GDPR data-handling line to the Honour\u2122 page, not just the Brief", "R",
      "Confidentiality is a sponsor's first worry about a team diagnostic.")
-item("Decide whether Honour\u2122 gives recommendations. The Brief says \"actionable\" and \"before making recommendations\" but also \"does not prescribe\"", "R",
-     "One wording everywhere.")
-item("Say whether the sponsor attends the sessions", "R")
+item('Update the \\"does not fix or prescribe\\" wording on the site and in the Brief, because Honour\u2122 does give recommendations', "R", "Suggested: \"Honour\u2122 recommends. It does not implement.\"")
+item('State on the site and in the Brief that the sponsor attends only if the participants agree', "R")
+item("Change report delivery from 3 to 5 business days everywhere: Brief (Sections Four, Five, Six), Honour\u2122 page, booking descriptions, policies", "V")
+item("Show the real session pattern on the Honour\u2122 page: Tuesday, Friday, then the following Wednesday, with the reflection emails after Sessions 1 and 2", "R")
+item("Test the Tally reflection and Integrate questionnaires: link works on phone, submissions arrive, confirmation shown, wording matches the Brief", "T")
 heading("4. Present the whole HFS Arc as your business model", "The site serves three engagements, but only Honour™ exists at launch. Show the journey without making the site look unfinished.")
 item("Show the three arcs as one journey on the homepage: Honour™ (see clearly), Flow™ (practise), SoftPower™ (lead)", "R",
      "One simple visual with three steps, Honour™ marked \"Open now\".")
@@ -216,7 +218,7 @@ from docx.enum.text import WD_BREAK
 doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 t = doc.add_paragraph()
 run(t, "Draft copy: What you get in each session", bold=True, color=TEAL, size=16)
-para("Built from your Honour™ Brief. Text in [square brackets] needs your decision. Written to be lifted straight onto the Honour™ page.", italic=True, color=GREY, size=9)
+para("Built from your Honour™ Brief and your answers. Text in [square brackets] needs your decision. Written to be lifted onto the Honour™ page.", italic=True, color=GREY, size=9)
 
 def block(title, body, get=None):
     p = doc.add_paragraph()
@@ -231,37 +233,39 @@ def block(title, body, get=None):
         run(r, get)
 
 block("How the two weeks work",
-      "Honour™ runs over two weeks: three 90-minute online sessions and two short private reflections. Between three and nine people take part [the Brief says 5 to 9 in the pricing table, so confirm the minimum]. Honour™ does not fix or prescribe. It shows you what is really happening, so you can decide what to do next.")
+      "Honour™ runs over about a week and a half: three 90-minute online sessions on a Tuesday, a Friday and the following Wednesday, with a short private reflection after each of the first two. Between five and nine people take part. Honour™ shows you what is really happening and gives you clear recommendations, so you can decide what to do next.")
 block("Before Session 1: Intake",
-      "You complete a short sponsor intake and consent form, and each participant completes an individual experience form. Data is handled in line with POPIA and equivalent international standards, including GDPR.",
+      "The sponsor completes an intake and consent form, and each participant completes an individual experience form. Data is handled in line with POPIA and equivalent international standards, including GDPR.",
       "Every session starts with the full picture already in hand, and everyone knows how their information is used.")
-block("Session 1: Reveal (90 minutes, online, live)",
+block("Session 1, Tuesday: Reveal (90 minutes, online, live)",
       "The first structured session surfaces current patterns, sources of friction and the concerns nobody says out loud in meetings.",
       "A first honest picture of how the team really works, in the team's own words.")
-block("Reflect (a few days after Session 1, private)",
-      "Each participant receives a brief private reflection to record what emerged for them. While they do, the session data is synthesised and anonymised. [Say how long it takes, for example about 20 minutes.]",
+block("After Session 1: Reflect (private, by email link)",
+      "Straight after Session 1, each participant receives an email with a link to a short private reflection questionnaire. While they complete it, the session data is synthesised and anonymised. [Say how long it takes, for example about 15 to 20 minutes.]",
       "A safe place to say what did not come out in the room, so the next session works with the whole picture.")
-block("Session 2: Align (90 minutes, online, live)",
+block("Session 2, Friday: Align (90 minutes, online, live)",
       "The team reviews the anonymised diagnostic data together and maps where the misalignment sits: in roles, communication, systems, leadership or the work itself.",
       "A clear map of where the team is aligned and where it is not, with the reasons.")
-block("Integrate (after Session 2, private)",
-      "A second brief reflection invites each participant to bring what was aligned into their own context, while the directional synthesis is prepared for the final session.",
+block("After Session 2: Integrate (private, by email link)",
+      "Straight after Session 2, each participant receives an email with a link to a second short private questionnaire, to bring what was aligned into their own context. Meanwhile the directional synthesis is prepared for the final session. [Say how long it takes.]",
       "Each person's own view of what the findings mean for their role.")
-block("Session 3: Direct (90 minutes, online, live)",
-      "The final session consolidates the findings, tests assumptions and confirms the overall picture. This is where truth becomes direction. The next steps remain yours to decide.",
-      "A confirmed, shared picture of your team that leadership can act on.")
-block("Within 3 business days: The Honour™ Report",
+block("Session 3, the following Wednesday: Direct (90 minutes, online, live)",
+      "The final session consolidates the findings, tests assumptions and confirms the overall picture. This is where truth becomes direction, and where the recommendations are shared.",
+      "A confirmed, shared picture of your team, with recommendations leadership can act on.")
+block("Within 5 business days: The Honour™ Report",
       "The sponsor receives the organisational diagnostic report, with all data anonymised. Each participant receives an individual insight report based on their own responses. Every participant also receives the Gifts of Clarity: a journaling prompts eBooklet and the Double Take Cards (I Do Know vs I Don't Know) reflection deck.",
       "A report for the sponsor, a personal report for each participant, and a lasting reflection tool for each person, all included in one per-participant rate.")
+block("Who attends",
+      "Participants are the team members taking part. The sponsor joins the sessions only if the participants agree to it, so people can speak freely.")
 
-heading("What the Brief already answers, and what is still open")
-for q in ["Answered: the sponsor receives the anonymised Honour™ Report within 3 business days, and participants receive their own reports",
-          "Answered: pricing is $441 to $705 per participant (5 to 9 people), 50% deposit and 50% on report delivery, USD base with GBP, EUR and ZAR available",
-          "Still open: does the sponsor attend the sessions, or stay out so people speak freely? Say so in the Brief and on the site",
-          "Still open: how long does each reflection take?",
-          "Still open: the minimum team size. The pricing table starts at 5 participants but the website only states a maximum of 9",
-          "Still open: the Brief says the findings are \"clear and actionable\" and that Align happens \"before making recommendations\", but elsewhere says Honour™ does not prescribe. Decide whether you give recommendations, and use one wording everywhere",
-          "Still open: Session 2 is labelled \"Week 1–2\" in the timeline. Give the exact spacing (for example, Session 1 on day 1, Session 2 on day 6, Session 3 on day 12)"]:
+heading("Wording to update everywhere")
+for q in ["Report delivery is now within 5 business days. The Brief still says 3 business days in Sections Four, Five and Six. Update the Brief, the Honour™ page, the booking descriptions and the policy pages",
+          "The Brief says the reflection is sent \"a few days after Session 1\". Your process sends the email straight after the session. Update the Brief",
+          "Recommendations are included, so update lines that say Honour™ \"does not fix or prescribe\" and \"does not provide answers\". A suggested wording: \"Honour™ recommends. It does not implement.\" The X-ray comparison still works, but say a doctor also advises",
+          "Minimum team size is 5. Add it to the Honour™ page and the Book Online description (the site only says maximum 9)",
+          "Add the sponsor rule to the Brief and the site: the sponsor attends only if participants agree",
+          "Replace \"Week 1–2\" in the Brief's timeline with the actual pattern: Tuesday, Friday, then the following Wednesday",
+          "Still to decide: how long each reflection questionnaire takes"]:
     item(q)
 
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
