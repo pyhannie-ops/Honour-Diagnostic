@@ -233,7 +233,7 @@ def block(title, body, get=None):
         run(r, get)
 
 block("How the two weeks work",
-      "Honour™ runs over about a week and a half: three 90-minute online sessions on a Tuesday, a Friday and the following Wednesday, with a short private reflection after each of the first two. Between five and nine people take part. Honour™ shows you what is really happening and gives you clear recommendations, so you can decide what to do next.")
+      "Honour™ runs over two weeks: three 90-minute online sessions on a Tuesday, a Friday and the following Wednesday, with a short private reflection after each of the first two. Between five and nine people take part. Honour™ shows you what is really happening and gives you clear recommendations, so you can decide what to do next.")
 block("Before Session 1: Intake",
       "The sponsor completes an intake and consent form, and each participant completes an individual experience form. Data is handled in line with POPIA and equivalent international standards, including GDPR.",
       "Every session starts with the full picture already in hand, and everyone knows how their information is used.")
@@ -267,6 +267,39 @@ for q in ["Report delivery is now within 5 business days. The Brief still says 3
           "Replace \"Week 1–2\" in the Brief's timeline with the actual pattern: Tuesday, Friday, then the following Wednesday",
           "Add the reflection details to the Brief and the site: about 15 minutes, take longer if you wish, due the day before the next session at the latest"]:
     item(q)
+
+doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+t = doc.add_paragraph()
+run(t, "Website copy: homepage and short Honour™ section", bold=True, color=TEAL, size=16)
+para("Drafts for your review. Text in [square brackets] needs your confirmation.", italic=True, color=GREY, size=9)
+
+heading("Homepage headline (recommended)")
+para("See what is really happening in your team, before you decide what to change.", bold=True, size=12, color=TEAL)
+heading("Homepage opening line")
+para("Honour™ is a facilitated organisational diagnostic for teams of 5 to 9 people: three 90-minute online sessions over two weeks, a clear report for the sponsor and for every participant, and recommendations you can act on. [Founding-cohort places open from 14 October 2026.] From $441 per participant.")
+heading("Buttons")
+para("Main: Book a 30-minute call. No commitment, no pitch.")
+para("Second: See how Honour™ works")
+heading("Other headline options")
+for x in ["Your strategy is sound. Something in the way is not. Honour™ shows you what.",
+          "A two-week diagnostic that shows where your team is misaligned, and what to do about it.",
+          "Before your team moves, they need to see clearly. (your current Honour™ page headline, which also works well)"]:
+    item(x)
+heading("Where the existing lines go")
+item("Keep \"Agile in Practice. Rooted in Progress. Human by Design.\" as the brand line under the logo or further down the page")
+item("Move \"One step steady, one breath clear\" and the W T F? section below the offer and the pricing, once the visitor knows what you sell")
+
+heading("Honour™ page: how it works (short version)")
+para("How Honour™ works", bold=True, color=OCHRE, size=11)
+para("Three 90-minute online sessions over two weeks, with a short private reflection after the first two. Five to nine people take part.")
+for x in ["Session 1, Tuesday: Reveal. We surface the patterns, friction and unspoken concerns behind the meeting narratives.",
+          "Session 2, Friday: Align. The team reviews the anonymised findings together and maps where the misalignment sits.",
+          "Session 3, the following Wednesday: Direct. We confirm the picture and share clear recommendations."]:
+    item(x)
+para("After Sessions 1 and 2, each participant receives an email link to a private 15-minute reflection, due the day before the next session at the latest.")
+para("Within 5 business days, the sponsor receives the anonymised Honour™ Report. Every participant receives their own report and the Gifts of Clarity: a journaling eBooklet and the Double Take Cards.")
+para("The sponsor joins the sessions only if the participants agree. Data is handled in line with POPIA and GDPR.")
+para("From $441 per participant (5 to 9 people, USD; GBP, EUR and ZAR available). 50% deposit to confirm, 50% on report delivery.", bold=True)
 
 doc.save("/home/user/Honour-Diagnostic/qa/Website-Fix-and-Improve-List.docx")
 print("saved")
