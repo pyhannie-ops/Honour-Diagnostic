@@ -68,7 +68,18 @@
   .tag.soon{color:#777}
   .arcnote{text-align:center;margin-top:20px;font-size:14px}
   .arcnote a{color:var(--teal-d);font-weight:600}
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .show{max-width:640px;margin:0 auto}
+  .viewport{overflow:hidden}
+  .track{display:flex;transition:transform .5s ease}
+  .slide{flex:0 0 100%;padding:0 6px}
+  .slide .wcard{font-size:16px;padding:28px 26px;min-height:250px;display:flex;flex-direction:column;justify-content:center}
+  .slide .wcard h3{font-size:24px}
+  .ctrl{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px}
+  .ctrl button{border:1px solid var(--teal-d);background:#fff;color:var(--teal-d);border-radius:20px;padding:6px 16px;font-size:14px;cursor:pointer;font-family:inherit}
+  .ctrl #pp{min-width:110px}
+  .dots{display:flex;justify-content:center;gap:10px;margin-top:12px}
+  .dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--teal-d);background:#fff;padding:0;cursor:pointer}
+  .dots button.on{background:var(--teal-d)}
   .wcard{border:6px solid var(--teal);padding:18px 14px;text-align:center;background:var(--mint);font-size:14px}
   .wcard.g{border-color:var(--gold)}
   .wcard.k{border-color:#777}
@@ -96,7 +107,7 @@
   @media(max-width:760px){
     .facts .wrap{grid-template-columns:repeat(2,1fr)}
     .svc{grid-template-columns:1fr}
-    .cards,.arc,.contact{grid-template-columns:1fr}
+    .arc,.contact{grid-template-columns:1fr}
     .step + .step{border-left:2px solid var(--gold);border-top:none}
     .head p{font-size:14px}
     .logo{width:64px;height:64px;font-size:8px}
@@ -221,12 +232,15 @@
   <div class="wrap">
     <h2>Why Us?</h2>
     <p class="sub">Why not us.<br>You are already here. Something's already shifting.</p>
-    <div class="cards">
-      <div class="wcard"><h3>W T F ?</h3><p><b style="color:var(--teal-d)">W</b>illing <b style="color:var(--teal-d)">T</b>o <b style="color:var(--teal-d)">F</b>lip?</p><p>The script.<br>The story.<br>The system.</p><p>We don't fix what's broken.<br>We reveal what's misaligned.</p></div>
-      <div class="wcard g"><h3>What We Do</h3><p>We tune the lens before we intervene. Every engagement begins with the discipline to see what is truly present, before anything is recommended, prescribed, or changed.</p><p>Some things work. Some things hold. We don't assume change is always needed.</p></div>
-      <div class="wcard k"><h3>Over-achiever?</h3><p>Nope. We just do it differently.</p><p>We help teams and individuals see clearly, move with purpose, and lead with influence. Honour&trade;, Flow&trade;, and SoftPower&trade; are three expressions of the same discipline.</p></div>
-      <div class="wcard"><h3>For real?</h3><p>More than ever.</p><p>We are intentionally off-script. We design clarity where systems default to noise, and introduce a steady, thoughtful approach to change where urgency tends to dominate.</p></div>
-    </div>
+    <div class="show" role="region" aria-roledescription="carousel" aria-label="Why us">
+      <div class="viewport"><div class="track" id="track"><div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4"><div class="wcard"><h3>W T F ?</h3><p><b style="color:var(--teal-d)">W</b>illing <b style="color:var(--teal-d)">T</b>o <b style="color:var(--teal-d)">F</b>lip?</p><p>The script.<br>The story.<br>The system.</p><p>We don't fix what's broken.<br>We reveal what's misaligned.</p></div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4"><div class="wcard g"><h3>What We Do</h3><p>We tune the lens before we intervene. Every engagement begins with the discipline to see what is truly present, before anything is recommended, prescribed, or changed.</p><p>Some things work. Some things hold. We don't assume change is always needed.</p></div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4"><div class="wcard k"><h3>Over-achiever?</h3><p>Nope. We just do it differently.</p><p>We help teams and individuals see clearly, move with purpose, and lead with influence. Honour&trade;, Flow&trade;, and SoftPower&trade; are three expressions of the same discipline.</p></div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4"><div class="wcard"><h3>For real?</h3><p>More than ever.</p><p>We are intentionally off-script. We design clarity where systems default to noise, and introduce a steady, thoughtful approach to change where urgency tends to dominate.</p></div></div></div></div>
+      <div class="ctrl">
+        <button id="prev" aria-label="Previous slide">&#8249;</button>
+        <button id="pp" aria-label="Pause slideshow">&#10074;&#10074; Pause</button>
+        <button id="next" aria-label="Next slide">&#8250;</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div></div>
   </div>
 </section>
 
@@ -260,5 +274,23 @@
 <footer>
   <a href="#">Accessibility Statement</a><a href="#">Booking Policy</a><a href="#">Copyright Policy</a><a href="#">Disclaimer</a><a href="#">Payment Policy</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Terms &amp; Conditions</a>
 </footer>
+<script>
+(function(){
+  var track=document.getElementById('track'),n=track.children.length,i=0,timer=null,playing=true;
+  var dots=document.getElementById('dots'),pp=document.getElementById('pp');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(var k=0;k<n;k++){(function(k){var b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(k+1));b.onclick=function(){go(k)};dots.appendChild(b)})(k)}
+  function go(x){i=(x+n)%n;track.style.transform='translateX(-'+i*100+'%)';[].forEach.call(dots.children,function(d,k){d.className=k===i?'on':''});}
+  function start(){stop();timer=setInterval(function(){go(i+1)},10000)}
+  function stop(){if(timer){clearInterval(timer);timer=null}}
+  function setPlaying(p){playing=p;pp.innerHTML=p?'&#10074;&#10074; Pause':'&#9654; Play';pp.setAttribute('aria-label',p?'Pause slideshow':'Play slideshow');p?start():stop()}
+  pp.onclick=function(){setPlaying(!playing)};
+  document.getElementById('prev').onclick=function(){go(i-1)};
+  document.getElementById('next').onclick=function(){go(i+1)};
+  var x0=null;track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  track.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+  go(0);setPlaying(!reduce);
+})();
+</script>
 </body>
 </html>
