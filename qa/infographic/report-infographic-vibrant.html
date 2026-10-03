@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Honour Report at a glance (illustrative, vibrant)</title>
+<style>
+@font-face{font-family:Poppins;font-weight:400;src:url(fonts/Poppins-400.ttf)}
+@font-face{font-family:Poppins;font-weight:500;src:url(fonts/Poppins-500.ttf)}
+@font-face{font-family:Poppins;font-weight:600;src:url(fonts/Poppins-600.ttf)}
+@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-700.ttf)}
+:root{--navy:#12294A;--teal:#095656;--gold:#C4A032;--orange:#F28C28;--blue:#2F6FD6;--purple:#7B5CD6;--mint:#5BD6A0}
+*{box-sizing:border-box;margin:0}
+body{width:2000px;height:1225px;font-family:Poppins,sans-serif;color:#1A1A1A;position:relative;overflow:hidden;
+ background:radial-gradient(1200px 500px at 15% 0%,#FFF1DA 0%,rgba(255,241,218,0) 70%),radial-gradient(1200px 500px at 90% 20%,#E4ECFF 0%,rgba(228,236,255,0) 70%),#F7F5EF}
+.top{height:78px;background:linear-gradient(90deg,#0E2340,#12294A 40%,#0B4A55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:35px;letter-spacing:.2px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.top b{font-weight:700;color:#FFD27A;margin-left:12px}
+h1{text-align:center;font-size:50px;font-weight:700;margin-top:22px;line-height:1.2;color:var(--navy)}
+h1 span{background:linear-gradient(90deg,var(--orange),var(--purple) 55%,var(--blue));-webkit-background-clip:text;color:transparent}
+.tension{position:absolute;top:186px;left:0;width:2000px;height:400px}
+.bar{position:absolute;left:170px;right:170px;top:96px;height:74px;border-radius:37px;background:linear-gradient(90deg,#F6A33C 0%,#F7C873 25%,#DDE6F7 50%,#7FA6EC 75%,#5B6FD6 100%);box-shadow:inset 0 3px 8px rgba(255,255,255,.6),0 6px 16px rgba(60,80,160,.25)}
+.streak{position:absolute;height:8px;border-radius:4px;background:rgba(255,255,255,.75)}
+.orb{position:absolute;width:190px;height:190px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px rgba(0,0,0,.28),inset 0 -10px 24px rgba(0,0,0,.18),inset 0 10px 22px rgba(255,255,255,.35)}
+.cap{position:absolute;text-align:center;width:540px}
+.cap h3{font-size:31px;font-weight:600;color:var(--navy)}
+.cap p{font-size:23px;line-height:1.3;color:#333;margin-top:6px}
+.sec{position:absolute;font-size:32px;font-weight:600;color:var(--navy);text-align:center}
+.sec:after{content:"";display:block;width:90px;height:5px;border-radius:3px;margin:8px auto 0;background:linear-gradient(90deg,var(--orange),var(--purple))}
+.node{position:absolute;width:300px;text-align:center}
+.node h4{font-size:27px;font-weight:600;color:var(--navy);margin-top:14px}
+.node p{font-size:21px;line-height:1.35;color:#333;margin-top:6px}
+.ico{width:170px;height:170px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(0,0,0,.22),inset 0 -8px 18px rgba(0,0,0,.16),inset 0 8px 16px rgba(255,255,255,.35)}
+.card{position:absolute;border-radius:24px;padding:22px 30px;box-shadow:0 8px 20px rgba(20,40,80,.15)}
+.card h5{font-size:28px;font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.card ul{list-style:none}
+.card li{font-size:20.5px;line-height:1.3;margin-bottom:9px;padding-left:26px;position:relative}
+.card li:before{content:"";position:absolute;left:0;top:8px;width:12px;height:12px;border-radius:50%}
+.from{background:linear-gradient(160deg,#EEEAF6,#DAD6E6);color:#333}.from li:before{background:#8E86AE}.from h5{color:#5A4E86}
+.to{background:linear-gradient(160deg,#DDF5EC,#BFE8E0);color:#123;border:2px solid #8FD4C6}.to li:before{background:var(--teal)}.to h5{color:var(--teal)}
+.bottom{position:absolute;left:1025px;top:995px;width:945px;height:205px;border-radius:24px;background:linear-gradient(135deg,#0E2340,#0B4A55);color:#fff;display:grid;grid-template-columns:1.05fr 1fr;box-shadow:0 10px 24px rgba(10,30,60,.35);overflow:hidden}
+.bottom>div{padding:20px 26px}
+.bottom h5{color:#FFD27A;font-size:26px;font-weight:600;margin-bottom:8px;line-height:1.15}
+.bottom li{list-style:none;font-size:20px;line-height:1.28;margin-bottom:6px;padding-left:28px;position:relative}
+.bottom li:before{content:"\2713";position:absolute;left:0;color:var(--mint);font-weight:700}
+.bottom p{font-size:20px;line-height:1.3}
+.foot{position:absolute;left:0;width:960px;top:1095px;padding:0 40px;font-size:19px;color:#555}
+.foot b{color:var(--teal)}
+</style></head><body>
+<div class="top">The Path to Integrated Speed: Honour&trade; Diagnostic Findings for <b>[Client company name]</b></div>
+<h1>Aligning on <span>shared risk ownership</span> is the path to operational speed.</h1>
+
+<div class="tension">
+  <div class="bar"></div>
+  <div class="streak" style="left:300px;top:108px;width:160px"></div><div class="streak" style="left:340px;top:128px;width:110px"></div><div class="streak" style="left:280px;top:148px;width:90px"></div>
+  <!-- agility orb with cheetah -->
+  <div class="orb" style="left:60px;top:34px;background:radial-gradient(circle at 32% 28%,#FFD27A,#F28C28 62%,#C95F0C)">
+    <svg width="190" height="130" viewBox="0 0 190 130">
+      <g fill="none" stroke="#FFF4DA" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 62 C8 62 4 36 16 26" stroke-width="8"/>
+        <path d="M118 66 L146 90 L160 88" stroke-width="9"/><path d="M110 68 L128 96 L140 98" stroke-width="9"/>
+        <path d="M52 66 L30 92 L18 88" stroke-width="9"/><path d="M62 68 L50 98 L38 100" stroke-width="9"/>
+      </g>
+      <path d="M32 58 C46 42 82 40 112 44 C130 46 140 50 150 50 C148 66 134 70 110 70 C78 72 48 74 32 58 Z" fill="#FFF4DA"/>
+      <path d="M136 50 C142 38 150 32 160 34" fill="none" stroke="#FFF4DA" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="162" cy="36" r="12" fill="#FFF4DA"/><ellipse cx="173" cy="41" rx="8" ry="5.5" fill="#FFF4DA"/>
+      <path d="M154 26 L156 14 L163 25 Z M163 24 L168 14 L171 27 Z" fill="#FFF4DA"/>
+      <circle cx="165" cy="34" r="2.4" fill="#5A2A0A"/><circle cx="176" cy="40" r="2" fill="#5A2A0A"/>
+      <g fill="#5A2A0A"><circle cx="58" cy="52" r="3.4"/><circle cx="74" cy="48" r="3.4"/><circle cx="90" cy="50" r="3.4"/><circle cx="106" cy="52" r="3.4"/><circle cx="66" cy="62" r="3"/><circle cx="84" cy="62" r="3"/><circle cx="100" cy="62" r="3"/><circle cx="124" cy="56" r="3"/><circle cx="46" cy="58" r="3"/></g>
+    </svg>
+  </div>
+  <div class="cap" style="left:35px;top:240px"><h3>Operational Agility</h3><p>Friction persists between the need for rapid execution&hellip;</p></div>
+
+  <!-- centre compass -->
+  <div class="sec" style="left:700px;width:600px;top:-4px;font-size:27px;color:#B26A0E">Central Tension</div>
+  <div class="orb" style="left:900px;top:30px;width:200px;height:200px;background:conic-gradient(from 200deg,#F28C28,#F7C873,#7FA6EC,#5B6FD6,#F28C28)">
+    <div style="width:164px;height:164px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 4px 12px rgba(0,0,0,.2)">
+      <svg width="130" height="130" viewBox="0 0 150 150"><circle cx="75" cy="75" r="64" fill="#EEF3FB" stroke="#12294A" stroke-width="4"/><g stroke="#12294A" stroke-width="3"><path d="M75 14 V26 M75 124 V136 M14 75 H26 M124 75 H136"/></g><path d="M75 30 L92 75 L58 75 Z" fill="#F28C28"/><path d="M75 120 L58 75 L92 75 Z" fill="#2F6FD6"/><circle cx="75" cy="75" r="7" fill="#fff" stroke="#12294A" stroke-width="3"/></svg>
+    </div>
+  </div>
+  <div style="position:absolute;left:610px;width:780px;top:246px;text-align:center">
+    <div style="font-size:33px;font-weight:600;color:var(--navy)">Diagnostic Overview</div>
+    <div style="display:flex;justify-content:center;gap:34px;margin-top:12px;font-size:21px;color:#333;line-height:1.3">
+      <div style="display:flex;gap:10px;align-items:center;text-align:left"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2F6FD6" stroke-width="2.5"><rect x="6" y="6" width="22" height="24" rx="2"/><path d="M11 12h4M19 12h4M11 17h4M19 17h4M11 22h4M19 22h4"/></svg>Professional<br>services sector</div>
+      <div style="display:flex;gap:10px;align-items:center;text-align:left"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#F28C28" stroke-width="2.5"><rect x="4" y="7" width="26" height="23" rx="3"/><path d="M4 14h26M11 4v6M23 4v6"/></svg>Tue 3, Fri 6 and<br>Wed 11 Nov 2026</div>
+      <div style="display:flex;gap:10px;align-items:center;text-align:left"><svg width="38" height="34" viewBox="0 0 38 34" fill="none" stroke="#7B5CD6" stroke-width="2.5"><circle cx="11" cy="12" r="5"/><circle cx="27" cy="12" r="5"/><path d="M2 29c0-7 18-7 18 0M18 29c0-7 18-7 18 0"/></svg>9 participants<br>(mixed seniority)</div>
+    </div>
+  </div>
+
+  <!-- control orb with shield and lock -->
+  <div class="orb" style="right:60px;top:34px;background:radial-gradient(circle at 32% 28%,#8FB4FF,#5B6FD6 55%,#6A3FC0)">
+    <svg width="150" height="150" viewBox="0 0 150 150"><path d="M72 12 L120 30 V72 C120 102 100 124 72 134 C44 124 24 102 24 72 V30 Z" fill="#fff" fill-opacity=".18" stroke="#fff" stroke-width="6"/><path d="M48 72 L66 90 L98 52" fill="none" stroke="#7CF0B8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><rect x="100" y="98" width="38" height="32" rx="5" fill="#FFD27A" stroke="#fff" stroke-width="3"/><path d="M107 98 V90 C107 78 131 78 131 90 V98" fill="none" stroke="#fff" stroke-width="5"/><circle cx="119" cy="112" r="4" fill="#6A3FC0"/></svg>
+  </div>
+  <svg style="position:absolute;right:300px;top:40px" width="120" height="110" viewBox="0 0 120 110" fill="none" stroke="#5B6FD6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 10 V92 M30 96 H90"/><path d="M26 28 H94"/><path d="M26 28 L10 62 H42 Z M94 28 L78 62 H110 Z" fill="#DDE6F7"/></svg>
+  <div class="cap" style="right:35px;top:240px"><h3>Risk Control</h3><p>&hellip;and the requirement for rigorous financial and technical oversight.</p></div>
+</div>
+
+<div class="sec" style="left:50px;width:950px;top:578px">Where Misalignment Lives</div>
+<svg style="position:absolute;left:0;top:640px" width="1000" height="200" viewBox="0 0 1000 200" fill="none" stroke="#B9B2D8" stroke-width="3"><path d="M170 80 H830" stroke-dasharray="4 10"/></svg>
+<div class="node" style="left:30px;top:640px"><div class="ico" style="background:radial-gradient(circle at 32% 28%,#FFD27A,#F28C28 65%,#C95F0C)"><svg width="110" height="110" viewBox="0 0 110 110" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="30" r="12"/><circle cx="85" cy="30" r="12"/><circle cx="55" cy="84" r="12"/><path d="M37 30 H66"/><path d="M60 22 L68 30 L60 38"/><path d="M80 42 L62 72"/><path d="M48 72 L30 42"/></svg></div><h4>Systems &amp; Process</h4><p>Excessive approval chains; decisions escalate higher than necessary.</p></div>
+<div class="node" style="left:350px;top:640px"><div class="ico" style="background:radial-gradient(circle at 32% 28%,#8FB4FF,#2F6FD6 65%,#1E4AA8)"><svg width="120" height="110" viewBox="0 0 120 110" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="38" y="10" width="72" height="46" rx="5"/><path d="M50 44 L66 30 L80 38 L98 20"/><circle cx="24" cy="46" r="11"/><path d="M6 100 C6 80 42 80 42 100"/><circle cx="84" cy="78" r="9"/><path d="M68 108 C68 92 100 92 100 108"/></svg></div><h4>Roles &amp; Planning</h4><p>Support teams are brought in after decisions are made, and treated as execution arms, not strategy partners.</p></div>
+<div class="node" style="left:670px;top:640px"><div class="ico" style="background:radial-gradient(circle at 32% 28%,#C4B0FF,#7B5CD6 65%,#4B2FA0)"><svg width="120" height="110" viewBox="0 0 120 110" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14 H72 V52 H36 L20 66 V52 H10 Z"/><path d="M52 40 H110 V78 H100 V92 L84 78 H52 Z"/><circle cx="68" cy="59" r="2.5" fill="#fff"/><circle cx="82" cy="59" r="2.5" fill="#fff"/><circle cx="96" cy="59" r="2.5" fill="#fff"/></svg></div><h4>Leadership</h4><p>Inconsistent handling of difficult conversations across legacy teams.</p></div>
+
+<div class="sec" style="left:1025px;width:945px;top:578px">What Held vs. What Shifted</div>
+<div class="card from" style="left:1025px;top:640px;width:455px;height:335px"><h5><svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="#5A4E86" stroke-width="2.5" stroke-linejoin="round"><path d="M19 4 L33 11 V27 L19 34 L5 27 V11 Z M5 11 L19 18 L33 11 M19 18 V34"/></svg>From (old perspective)</h5><ul>
+<li>Support teams execute decisions made elsewhere.</li><li>Avoiding difficult conversations keeps the peace.</li><li>Control functions are gatekeepers to be bypassed or managed.</li><li>More steps equal more safety.</li></ul></div>
+<svg style="position:absolute;left:1468px;top:775px" width="64" height="80" viewBox="0 0 64 80"><defs><linearGradient id="ag" x1="0" x2="1"><stop offset="0" stop-color="#8E86AE"/><stop offset="1" stop-color="#095656"/></linearGradient></defs><path d="M0 22 H34 V4 L62 40 L34 76 V58 H0 Z" fill="url(#ag)"/></svg>
+<div class="card to" style="left:1515px;top:640px;width:455px;height:335px"><h5><svg width="40" height="38" viewBox="0 0 40 38" fill="none" stroke="#095656" stroke-width="2.5" stroke-linecap="round"><circle cx="20" cy="8" r="4"/><circle cx="8" cy="29" r="4"/><circle cx="32" cy="29" r="4"/><path d="M18 12 L10 25 M22 12 L30 25 M12 29 H28"/></svg>To (confirmed shift)</h5><ul>
+<li>Support teams shape strategy from the beginning.</li><li>Honest conversations prevent operational crises.</li><li>Control functions are strategic partners in managing risk.</li><li>Controls scale with actual risk.</li></ul></div>
+
+<div class="bottom">
+  <div style="border-right:1px solid rgba(255,255,255,.2);">
+    <div><h5>Areas of Appetite for Change</h5><ul><li>High readiness to pilot simplified approval workflows.</li><li>Strong interest in a joint quarterly planning rhythm.</li></ul></div></div>
+  <div><div><h5>Recommendations for Leadership</h5><p>Options include a tiered approval pilot, a shared risk register, a joint planning rhythm and one accountable owner for completing the merger.</p></div></div>
+</div>
+<div class="foot"><b>Honour&trade; recommends. It does not implement.</b> Leadership decides what to act on and when. &nbsp;|&nbsp; ILLUSTRATIVE SAMPLE: fictional client and data.</div>
+</body></html>
