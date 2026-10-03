@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Poppins;font-weight:400;src:url(fonts/Poppins-400.ttf)}
+@font-face{font-family:Poppins;font-weight:500;src:url(fonts/Poppins-500.ttf)}
+@font-face{font-family:Poppins;font-weight:600;src:url(fonts/Poppins-600.ttf)}
+@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-700.ttf)}
+*{box-sizing:border-box;margin:0}
+body{width:1800px;background:#fff;font-family:Poppins,sans-serif;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.panel{border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.tag{padding:12px 24px;font-size:26px;font-weight:700;letter-spacing:.06em;color:#fff}
+.before .tag{background:#7a7a7a}.after .tag{background:#095656}
+.before .doc{background:#f3f2ee;padding:34px 38px;font-family:"Times New Roman",Georgia,serif;font-size:21px;line-height:1.45;color:#333}
+.before h1{font-size:26px;margin-bottom:14px;font-weight:700}
+.before p{text-align:justify}
+.why{margin-top:26px;background:#fff0ee;border-left:6px solid #c0392b;border-radius:6px;padding:16px 20px;font-family:Poppins,sans-serif;font-size:18px;line-height:1.5;color:#7a2418}
+.why b{display:block;margin-bottom:6px;font-size:19px}
+.why li{margin-left:20px}
+.after .doc{background:#fff;padding:34px 38px;font-size:19.5px;line-height:1.5;color:#1a1a1a}
+.after h1{font-size:31px;color:#12294A;font-weight:600;margin-bottom:6px;line-height:1.2}
+.meta{font-size:15px;color:#666;margin-bottom:16px;padding-bottom:12px;border-bottom:3px solid #C4A032}
+.label{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#C4A032;border-radius:4px;padding:1px 9px;margin:14px 0 6px}
+.after p.purpose{font-size:19px}
+.chk{list-style:none}.chk li{padding-left:30px;position:relative;margin-bottom:3px}
+.chk li:before{content:"\2610";position:absolute;left:0;color:#095656;font-size:22px;line-height:1.2}
+ol.steps{list-style:none;counter-reset:n;margin-top:4px}
+ol.steps>li{counter-increment:n;position:relative;padding:8px 0 8px 52px;border-bottom:1px solid #eee}
+ol.steps>li:before{content:counter(n);position:absolute;left:0;top:7px;width:36px;height:36px;border-radius:50%;background:#095656;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:19px}
+.res{display:block;margin-top:6px;background:#e3f4ee;border-left:5px solid #2f8f6b;border-radius:4px;padding:7px 12px;font-size:17px}
+.note{display:block;margin-top:6px;background:#fff6d6;border-left:5px solid #C4A032;border-radius:4px;padding:7px 12px;font-size:17px}
+b.ui{color:#095656}
+table{width:100%;border-collapse:collapse;margin-top:6px;font-size:17px}
+td,th{border:1px solid #cfd8d6;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#095656;color:#fff}
+.foot{margin-top:18px;font-size:14px;color:#777;text-align:center}
+</style></head><body>
+<div class="panel before"><div class="tag">BEFORE: how it often looks</div><div class="doc">
+<h1>New starter access</h1>
+<p>When HR sends the email about a new person starting you need to go in the system and make them a profile and also check with their manager what they need, usually the standard set but sometimes finance ones too, then you put the details in and save it and it should send them an email, if it doesn't then do it again or ask IT. Don't forget to tick the box for the training one. The password thing is automatic but sometimes you have to reset it so go to the users page, also tell the manager when its done. Make sure its approved first (see Sarah) otherwise it gets rejected and we have to start over. Use the new template if there is one.</p>
+<div class="why"><b>What makes this hard to use</b><ul>
+<li>No purpose, owner or review date.</li>
+<li>The steps are buried in one paragraph, in no clear order.</li>
+<li>One thing has three names: profile, account, user.</li>
+<li>It never says where to click or what you should see.</li>
+<li>Approval depends on knowing who &ldquo;Sarah&rdquo; is.</li></ul></div>
+</div></div>
+
+<div class="panel after"><div class="tag">AFTER: clear, repeatable, error-free</div><div class="doc">
+<h1>Set up system access for a new starter</h1>
+<div class="meta">Owner: IT Service Desk &nbsp;|&nbsp; Last reviewed: [date] &nbsp;|&nbsp; Applies to: ExampleERP portal</div>
+<span class="label">Purpose</span>
+<p class="purpose">Give a new starter the access they need on their first day, with their manager&rsquo;s approval.</p>
+<span class="label">Before you start</span>
+<ul class="chk"><li>The approved New Starter Form from HR.</li><li>The manager&rsquo;s confirmation of required access: Standard, or Standard and Finance.</li><li>You hold the Service Desk Administrator role.</li></ul>
+<span class="label">Steps</span>
+<ol class="steps">
+<li>Open the ExampleERP portal and select <b class="ui">Users</b> &rsaquo; <b class="ui">Add user</b>.</li>
+<li>Enter the details from the approved form: full name, work email, start date and department.</li>
+<li>Under <b class="ui">Access profile</b>, select <b class="ui">Standard</b>. If the manager asked for Finance access, also select <b class="ui">Finance</b>.</li>
+<li>Tick <b class="ui">Assign mandatory training</b>.</li>
+<li>Select <b class="ui">Save</b>.<span class="res"><b>Expected result:</b> A confirmation message appears, and the new starter receives a welcome email within 5 minutes.</span></li>
+<li>Email the manager to confirm the access is ready.<span class="note"><b>Note:</b> Passwords are generated automatically. Never send a password by email.</span></li>
+</ol>
+<span class="label">If something goes wrong</span>
+<table><tr><th>Problem</th><th>What to do</th></tr>
+<tr><td>No welcome email after 5 minutes</td><td>Select <b class="ui">Users</b> &rsaquo; the user &rsaquo; <b class="ui">Resend welcome email</b>.</td></tr>
+<tr><td>Request rejected</td><td>Check the form has manager approval, then submit it again.</td></tr>
+<tr><td>Still stuck</td><td>Contact IT Support.</td></tr></table>
+<div class="foot">Illustrative sample. Fictional system, process and names.</div>
+</div></div>
+</body></html>
