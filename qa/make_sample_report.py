@@ -6,7 +6,8 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 TEAL, OCHRE, BLACK, GREY = RGBColor(0x09, 0x56, 0x56), RGBColor(0xC0, 0x8A, 0x2E), RGBColor(0x1A, 0x1A, 0x1A), RGBColor(0x6B, 0x6B, 0x6B)
-FONT = "Aptos"
+import os
+FONT = os.environ.get("REPORT_FONT", "Aptos")
 TM = "™"
 CLIENT = "[Client company name]"
 SPONSOR = "[Sponsor name]"
@@ -200,6 +201,7 @@ table(["Stage", "Session", "Purpose"],
        ["Direct", "Session 3, Wednesday 11 November", "Consolidate findings, test assumptions and confirm the overall picture. This is where insight becomes direction."]],
       [2.6, 5.0, 8.8])
 
+pagebreak()
 h2("How the engagement unfolded")
 table(["When", "Step"],
       [["Before Session 1", "Sponsor completed the Corporate Intake & Consent Form. Each participant completed the Individual Participant Experience form."],
@@ -347,6 +349,6 @@ para()
 para(f"Honour{TM} Diagnostic is a proprietary framework of HannieVerse Enterprise{TM} and Hannie Consultants cc. Not for redistribution.",
      italic=True, color=GREY, size=9, align=WD_ALIGN_PARAGRAPH.CENTER)
 
-out = "/home/user/Honour-Diagnostic/qa/sample-report/Honour-Report-SAMPLE-rewritten.docx"
+out = os.environ.get("REPORT_OUT", "/home/user/Honour-Diagnostic/qa/sample-report/Honour-Report-SAMPLE-rewritten.docx")
 doc.save(out)
 print("saved", out)
